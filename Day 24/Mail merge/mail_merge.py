@@ -1,4 +1,4 @@
-def mail_merge():
+def mail_merge() -> None:
     with (open("./Input/Names/invited_names.txt", mode="r") as names_file):
         names = names_file.readlines()
 

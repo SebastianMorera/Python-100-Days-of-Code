@@ -8,8 +8,8 @@ BACKGROUND_COLOR = "#B1DDC6"
 current_card = {}
 flip_timer = None
 
-def flash_card_app():
-    def next_card():
+def flash_card_app() -> None:
+    def next_card() -> None:
         global current_card, flip_timer
         if flip_timer is not None:
             window.after_cancel(flip_timer)
@@ -19,12 +19,12 @@ def flash_card_app():
         canvas.itemconfig(card_background, image=card_front_img)
         flip_timer = window.after(3000, func=flip_card)
 
-    def flip_card():
+    def flip_card() -> None:
         canvas.itemconfig(card_title, text="English", fill="white")
         canvas.itemconfig(card_word, text=current_card["English"], fill="white")
         canvas.itemconfig(card_background, image=card_back_img)
 
-    def is_known():
+    def is_known() -> None:
         data.remove(current_card)
         new_data = pandas.DataFrame(data)
         new_data.to_csv("data/words_to_learn.csv", index=False)

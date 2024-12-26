@@ -5,7 +5,7 @@ from car_manager import CarManager
 from scoreboard import Scoreboard
 
 
-def crossing_game():
+def crossing_game() -> None:
     screen = Screen()
     screen.setup(width=600, height=600)
     screen.tracer(0)

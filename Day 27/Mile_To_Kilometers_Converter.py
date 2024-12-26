@@ -1,6 +1,6 @@
 import tkinter
 
-def mile_to_kilometers_converter():
+def mile_to_kilometers_converter() -> None:
     def calculate_button_clicked():
         print("Calculate clicked")
         miles = float(mile_entry.get())

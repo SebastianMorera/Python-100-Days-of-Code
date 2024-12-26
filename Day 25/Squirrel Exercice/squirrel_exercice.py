@@ -1,7 +1,7 @@
 import pandas
 
 
-def squirrel():
+def squirrel() -> None:
     squirrel_data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data_20240620.csv")
     gray_count = len(squirrel_data[squirrel_data["Primary Fur Color"] == "Gray"])
     cinnamon_count = len(squirrel_data[squirrel_data["Primary Fur Color"] == "Cinnamon"])

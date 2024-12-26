@@ -14,7 +14,7 @@ LONG_BREAK_MIN = 20
 REPS = 0
 TIMER = ""
 # ---------------------------- TIMER RESET ------------------------------- #
-def reset_timer():
+def reset_timer() -> None:
     window.after_cancel(TIMER)
     canvas.itemconfig(timer_text, text="00:00")
     timer_label.config(text="Timer")
@@ -23,7 +23,7 @@ def reset_timer():
     REPS = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
-def start_timer():
+def start_timer() -> None:
     global REPS
     REPS += 1
 
@@ -38,7 +38,7 @@ def start_timer():
         timer_label.config(text="Work", fg=GREEN)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
-def count_down(count):
+def count_down(count) -> None:
     global REPS
     count_min = math.floor(count / 60)
     count_sec = count % 60
@@ -88,8 +88,3 @@ checkmark_label = tkinter.Label(bg=YELLOW, fg=GREEN, font=(FONT_NAME, 35))
 checkmark_label.grid(column=1, row=3)
 
 window.mainloop()
-
-# def pomodoro():
-#
-# if __name__ == '__main__':
-#     pomodoro()

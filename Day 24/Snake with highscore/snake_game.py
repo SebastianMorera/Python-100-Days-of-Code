@@ -5,7 +5,7 @@ from scoreboard import ScoreBoard
 import time
 
 
-def snake_game():
+def snake_game() -> None:
     screen = Screen()
     screen.setup(width=600, height=600)
     screen.bgcolor("black")

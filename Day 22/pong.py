@@ -5,7 +5,7 @@ from scoreboard import Scoreboard
 import time
 
 
-def pong_game():
+def pong_game() -> None:
     screen = Screen()
     screen.bgcolor("black")
     screen.setup(width=800, height=600)

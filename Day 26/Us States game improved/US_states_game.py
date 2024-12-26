@@ -2,7 +2,7 @@ import turtle
 import pandas
 
 
-def us_states_game():
+def us_states_game() -> None:
     screen = turtle.Screen()
     screen.title("U.S. States Game")
 
