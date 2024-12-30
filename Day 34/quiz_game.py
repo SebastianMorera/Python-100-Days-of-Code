@@ -13,7 +13,7 @@ def quiz_game() -> None:
         question_bank.append(new_question)
 
     quiz = QuizBrain(question_bank)
-    quiz_ui = QuizInterface(quiz)
+    QuizInterface(quiz)
 
 
 if __name__ == '__main__':
