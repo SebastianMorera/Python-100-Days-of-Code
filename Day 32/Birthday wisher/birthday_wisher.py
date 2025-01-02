@@ -1,11 +1,12 @@
 import datetime as dt
+from dotenv import load_dotenv
+import os
 import random
-
 import pandas as pd
 import smtplib
 
-MY_EMAIL = "sebastiantestingenvironment@gmail.com"
-MY_PASSWORD = "aiwy frmc vgeq tgfz"
+MY_TESTING_EMAIL = os.environ.get("MY_TESTING_GOOGLE_EMAIL")
+MY_TESTING_PASSWORD = os.environ.get("MY_GOOGLE_APP_PASSWORD")
 
 
 def birthday_wisher() -> None:
@@ -21,13 +22,14 @@ def birthday_wisher() -> None:
 
         with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
             connection.starttls()
-            connection.login(MY_EMAIL, password=MY_PASSWORD)
+            connection.login(MY_TESTING_EMAIL, password=MY_TESTING_PASSWORD)
             connection.sendmail(
-                from_addr=MY_EMAIL,
+                from_addr=MY_TESTING_EMAIL,
                 to_addrs=birthday_person["email"],
                 msg=f"Subject:Happy Birthday!\n\n{content}")
             connection.close()
 
 
 if __name__ == '__main__':
+    load_dotenv()
     birthday_wisher()

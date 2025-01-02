@@ -1,9 +1,12 @@
 import datetime as dt
+from dotenv import load_dotenv
+import os
 import random
 import smtplib
 
-MY_EMAIL = "sebastiantestingenvironment@gmail.com"
-MY_PASSWORD = "aiwy frmc vgeq tgfz"
+MY_EMAIL = os.environ.get("MY_GOOGLE_EMAIL")
+MY_TESTING_EMAIL = os.environ.get("MY_TESTING_GOOGLE_EMAIL")
+MY_TESTING_PASSWORD = os.environ.get("MY_GOOGLE_APP_PASSWORD")
 
 class DayOfWeek:
     MONDAY = 0
@@ -25,10 +28,11 @@ def send_motivational_email() -> None:
 
         with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
             connection.starttls()
-            connection.login(MY_EMAIL, password=MY_PASSWORD)
-            connection.sendmail(from_addr=MY_EMAIL, to_addrs="morerasebas999@gmail.com",
+            connection.login(MY_TESTING_EMAIL, password=MY_TESTING_PASSWORD)
+            connection.sendmail(from_addr=MY_TESTING_EMAIL, to_addrs=MY_EMAIL,
                                 msg=f"Subject:Motivation quote \n\n{quote}")
             connection.close()
 
 if __name__ == '__main__':
+    load_dotenv()
     send_motivational_email()

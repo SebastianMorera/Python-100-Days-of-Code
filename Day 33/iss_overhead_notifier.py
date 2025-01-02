@@ -1,13 +1,16 @@
+from dotenv import load_dotenv
+import os
 import requests
 from datetime import datetime
 import smtplib
 
 ISS_LOCATION_URL = "http://api.open-notify.org/iss-now.json"
 SUNRISE_SUNSET_URL = "https://api.sunrise-sunset.org/json"
-MY_LATITUDE = 45.501690
-MY_LONGITUDE = -73.567253
-MY_EMAIL = "sebastiantestingenvironment@gmail.com"
-MY_PASSWORD = "aiwy frmc vgeq tgfz"
+MY_LONGITUDE = -73.5878
+MY_LATITUDE = 45.5088
+MY_EMAIL = os.environ.get("MY_GOOGLE_EMAIL")
+MY_TESTING_EMAIL = os.environ.get("MY_TESTING_GOOGLE_EMAIL")
+MY_TESTING_PASSWORD = os.environ.get("MY_GOOGLE_APP_PASSWORD")
 
 def iss_location() -> (float, float):
     response = requests.get(url=ISS_LOCATION_URL)
@@ -48,14 +51,15 @@ def iss_overhead_notifier() -> None:
     if is_iss_overhead() and is_night():
         with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
             connection.starttls()
-            connection.login(MY_EMAIL, password=MY_PASSWORD)
-            connection.sendmail(from_addr=MY_EMAIL, to_addrs="morerasebas999@gmail.com",
+            connection.login(MY_TESTING_EMAIL, password=MY_TESTING_PASSWORD)
+            connection.sendmail(from_addr=MY_TESTING_EMAIL, to_addrs="morerasebas999@gmail.com",
                                 msg=f"Subject:Look up \n\nThe ISS is above you in the sky.")
             connection.close()
     else:
         print("The ISS is not above you in the sky.")
 
 if __name__ == '__main__':
+    load_dotenv()
     iss_location()
     sunrise_sunset()
     iss_overhead_notifier()

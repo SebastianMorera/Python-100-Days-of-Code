@@ -5,10 +5,7 @@ Welcome to the repository for the "100 Days of Code: The Complete Python Pro Boo
 - [Introduction](#introduction)
 - [Course Content](#course-content)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Projects](#projects)
-- [Resources](#resources)
-- [Contributing](#contributing)
+- [Environment variables](#environment)
 - [License](#license)
 - [Contact](#contact)
 
@@ -35,3 +32,14 @@ Clone this repository to your local machine using the following command:
 
 ```bash
 git clone git@github.com:SebastianMorera/Python-100-Days-of-Code.git
+```
+
+## Environment
+An .env file is required to run some scripts. Here is the list of environment variables you might need to define:
+
+- MY_GOOGLE_EMAIL: Your Google email you want to receive the testing emails.
+- MY_TESTING_GOOGLE_EMAIL: The testing Google email you want to send emails from.
+- MY_TESTING_GOOGLE_APP_PASSWORD: The application password from the Google testing email.
+- WEATHER_API_KEY: Your api key from openweathermap.
+- TWILIO_ACCOUNT_SID: Your Twilio account sid.
+- TWILIO_AUTH_TOKEN: Your Twilio authentication token.
