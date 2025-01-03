@@ -43,3 +43,5 @@ An .env file is required to run some scripts. Here is the list of environment va
 - WEATHER_API_KEY: Your api key from openweathermap.
 - TWILIO_ACCOUNT_SID: Your Twilio account sid.
 - TWILIO_AUTH_TOKEN: Your Twilio authentication token.
+- ALPHA_VANTAGE_STOCK_API_KEY: Your Alpha Vantage API key.
+- NEWS_API_KEY: Your news api key.

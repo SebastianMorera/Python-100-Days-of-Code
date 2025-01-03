@@ -9,8 +9,6 @@ WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
 FORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast"
 
 def rain_alert() -> None:
-    # Get environments variables
-    load_dotenv()
     api_key = os.environ.get("WEATHER_API_KEY")
     account_sid = os.environ.get("TWILIO_ACCOUNT_SID")
     auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
@@ -38,4 +36,5 @@ def rain_alert() -> None:
 
 
 if __name__ == "__main__":
+    load_dotenv()
     rain_alert()
