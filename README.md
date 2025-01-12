@@ -45,3 +45,4 @@ An .env file is required to run some scripts. Here is the list of environment va
 - TWILIO_AUTH_TOKEN: Your Twilio authentication token.
 - ALPHA_VANTAGE_STOCK_API_KEY: Your Alpha Vantage API key.
 - NEWS_API_KEY: Your news api key.
+- PIXELA_API_TOKEN: Pixela api token fro your user.
