@@ -6,8 +6,6 @@ Welcome to the repository for the "100 Days of Code: The Complete Python Pro Boo
 - [Course Content](#course-content)
 - [Installation](#installation)
 - [Environment variables](#environment)
-- [License](#license)
-- [Contact](#contact)
 
 ## Introduction
 This repository is a collection of my work while following the "100 Days of Code: The Complete Python Pro Bootcamp" course by Dr. Angela Yu. The course covers a wide range of topics in Python programming, from beginner to advanced levels, through daily coding challenges and projects.
@@ -46,3 +44,6 @@ An .env file is required to run some scripts. Here is the list of environment va
 - ALPHA_VANTAGE_STOCK_API_KEY: Your Alpha Vantage API key.
 - NEWS_API_KEY: Your news api key.
 - PIXELA_API_TOKEN: Pixela api token fro your user.
+- NUTRITIONIX_API_APPLICATION_ID: Nutritionix api application id.
+- NUTRITIONIX_API_APPLICATION_KEY: Nutritionix api key used to authenticate requests.
+- BEARER_TOKEN_SHEETY_API: Sheety api bearer token.
