@@ -36,6 +36,7 @@ git clone git@github.com:SebastianMorera/Python-100-Days-of-Code.git
 An .env file is required to run some scripts. Here is the list of environment variables you might need to define:
 
 - MY_GOOGLE_EMAIL: Your Google email you want to receive the testing emails.
+- EMAIL_PROVIDER_SMTP_ADDRESS: The SMTP address of your email provider.
 - MY_TESTING_GOOGLE_EMAIL: The testing Google email you want to send emails from.
 - MY_TESTING_GOOGLE_APP_PASSWORD: The application password from the Google testing email.
 - WEATHER_API_KEY: Your api key from openweathermap.
