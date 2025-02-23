@@ -7,6 +7,7 @@ import smtplib
 
 MY_TESTING_EMAIL = os.environ.get("MY_TESTING_GOOGLE_EMAIL")
 MY_TESTING_PASSWORD = os.environ.get("MY_GOOGLE_APP_PASSWORD")
+EMAIL_PROVIDER = os.environ.get("EMAIL_PROVIDER_SMTP_ADDRESS")
 
 
 def birthday_wisher() -> None:
@@ -20,7 +21,7 @@ def birthday_wisher() -> None:
             content = letter_file.read()
             content = content.replace("[NAME]", birthday_person["name"])
 
-        with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+        with smtplib.SMTP(EMAIL_PROVIDER, port=587) as connection:
             connection.starttls()
             connection.login(MY_TESTING_EMAIL, password=MY_TESTING_PASSWORD)
             connection.sendmail(
